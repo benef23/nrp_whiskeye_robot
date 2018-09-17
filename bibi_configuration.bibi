@@ -1,0 +1,11 @@
+<ns1:bibi 
+  xmlns:ns1="http://schemas.humanbrainproject.eu/SP10/2014/BIBI" 
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <ns1:brainModel>
+    <ns1:file>braitenberg.py</ns1:file>
+  </ns1:brainModel>
+  <ns1:bodyModel robotId="whiskeyea" assetPath="whiskeye_gazebo" customAsset="false">whiskeye_gazebo/whiskeye_robot.sdf</ns1:bodyModel>
+  <ns1:bodyModel robotId="whiskeyeb" assetPath="whiskeye_gazebo" customAsset="false">whiskeye_gazebo/whiskeye_robot.sdf</ns1:bodyModel>
+  <ns1:bodyModel robotId="whiskeyec" assetPath="whiskeye_gazebo" customAsset="false">whiskeye_gazebo/whiskeye_robot.sdf</ns1:bodyModel>
+  <ns1:transferFunction src="whiskeyea.py" xsi:type="ns1:PythonTransferFunction" />
+</ns1:bibi>

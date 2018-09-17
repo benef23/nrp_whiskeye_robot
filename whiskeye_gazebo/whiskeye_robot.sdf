@@ -1,0 +1,513 @@
+<?xml version="1.0"?>
+<sdf version="1.5">
+	<model name="whiskeye_gazebo">
+
+		<link name="link_whiskeye_body">
+			<inertial>
+				<pose>0.000000 0.000000 0.1  0 0 0</pose>
+				<mass>25.000 </mass>
+				<inertia>
+					<ixx>0.005236</ixx>
+					<ixy>0</ixy>
+					<ixz>0</ixz>
+					<iyy>0.005236</iyy>
+					<iyz>0</iyz>
+					<izz>0.007854</izz>
+				</inertia>
+			</inertial>
+			<visual name="visual_whiskeye_body">
+				<pose>0 0 0 0 0 0</pose>
+				<geometry>
+					<mesh>
+						<uri>model://whiskeye_gazebo/mesh/hi/whiskeye_body.dae</uri>
+					</mesh>
+				</geometry>
+<!--
+				<material>
+					<script>
+						<uri>model://media/materials/scripts/gazebo.material</uri>
+						<name>Gazebo/DarkGrey</name>
+					</script>
+				</material>
+-->
+			</visual>
+			<collision name="collision_whiskeye_body">
+				<pose>0 0 0 0 0 0</pose>
+				<geometry>
+					<mesh>
+						<uri>model://whiskeye_gazebo/mesh/lo/whiskeye_body.dae</uri>
+					</mesh>
+				</geometry>
+				<surface>
+					<friction>
+						<ode>
+							<mu>0.1</mu>
+							<mu2>0.1</mu2>
+						</ode>
+					</friction>
+				</surface>
+			</collision>
+
+		</link>
+
+		<joint type="revolute" name="joint_whiskeye_neck">
+			<pose>0.12865 0 0.07985 0 0 0</pose>
+			<parent>link_whiskeye_body</parent>
+			<child>link_whiskeye_neck</child>
+			<axis>
+				<xyz>0 1 0</xyz>
+				<limit>
+					<!-- 0 deg to 70deg -->
+					<lower>0.0</lower>
+					<upper>1.223</upper>
+				</limit>
+				<dynamics>
+					<friction>0.1</friction>
+					<damping>0.1</damping>
+				</dynamics>
+			</axis>
+		</joint>
+
+		<link name="link_whiskeye_neck">
+			<inertial>
+				<pose>0.12865 0 0.224 0 0 0</pose>
+				<mass>2.000 </mass>
+				<inertia>
+					<ixx>0.005236</ixx>
+					<ixy>0</ixy>
+					<ixz>0</ixz>
+					<iyy>0.005236</iyy>
+					<iyz>0</iyz>
+					<izz>0.007854</izz>
+				</inertia>
+			</inertial>
+			<visual name="visual_whiskeye_neck">
+				<pose>0 0 0 0 0 0</pose>			
+				<geometry>
+					<mesh>
+						<uri>model://whiskeye_gazebo/mesh/hi/whiskeye_neck.dae</uri>
+					</mesh>
+				</geometry>
+<!--				
+				<material>
+					<script>
+						<uri>model://media/materials/scripts/gazebo.material</uri>
+						<name>Gazebo/DarkGrey</name>
+					</script>
+				</material>
+-->
+			</visual>
+			<collision name="collision_whiskeye_neck">
+				<pose>0 0 0 0 0 0</pose>
+				<geometry>
+					<mesh>
+						<uri>model://whiskeye_gazebo/mesh/lo/whiskeye_neck.dae</uri>
+					</mesh>
+				</geometry>
+				<surface>
+					<friction>
+						<ode>
+							<mu>0.1</mu>
+							<mu2>0.1</mu2>
+						</ode>
+					</friction>
+				</surface>
+			</collision>
+
+		</link>
+
+		<joint type="revolute" name="joint_whiskeye_gmbl">
+			<pose>0.1688 0 0.32702 0 0 0</pose>
+			<parent>link_whiskeye_neck</parent>
+			<child>link_whiskeye_gmbl</child>
+			<axis>
+				<xyz>0 1 0</xyz>
+				<limit>
+					<!-- 0 - 120 deg -->
+					<lower>0.0</lower>
+					<upper>2.097</upper>
+				</limit>
+				<dynamics>
+					<friction>0.1</friction>
+					<damping>0.1</damping>
+				</dynamics>
+			</axis>
+		</joint>
+
+		<link name="link_whiskeye_gmbl">
+			<inertial>
+				<pose>0.1688 0 0.37102 0 0 0</pose>
+				<mass>1.000 </mass>
+				<inertia>
+					<ixx>0.005236</ixx>
+					<ixy>0</ixy>
+					<ixz>0</ixz>
+					<iyy>0.005236</iyy>
+					<iyz>0</iyz>
+					<izz>0.007854</izz>
+				</inertia>
+			</inertial>
+			<visual name="visual_whiskeye_gmbl">
+				<pose>0 0 0 0 0 0</pose>
+				<geometry>
+					<mesh>
+						<uri>model://whiskeye_gazebo/mesh/hi/whiskeye_gmbl.dae</uri>
+					</mesh>
+				</geometry>
+<!--				
+				<material>
+					<script>
+						<uri>model://media/materials/scripts/gazebo.material</uri>
+						<name>Gazebo/DarkGrey</name>
+					</script>
+				</material>
+-->
+			</visual>
+			<collision name="collision_whiskeye_gmbl">
+				<pose>0 0 0 0 0 0</pose>
+				<geometry>
+					<mesh>
+						<uri>model://whiskeye_gazebo/mesh/lo/whiskeye_gmbl.dae</uri>
+					</mesh>
+				</geometry>
+				<surface>
+					<friction>
+						<ode>
+							<mu>0.1</mu>
+							<mu2>0.1</mu2>
+						</ode>
+					</friction>
+				</surface>
+			</collision>
+
+		</link>
+
+		<joint type="revolute" name="joint_whiskeye_head_whiskerfree">
+			<pose>0.13715 0 0.42743 0 0 0</pose>
+			<parent>link_whiskeye_gmbl</parent>
+			<child>link_whiskeye_head_whiskerfree</child>
+			<axis>
+				<xyz>1 0 0</xyz>
+				<limit>
+					<!-- +/- 90 deg -->
+					<lower>-1.57</lower>
+					<upper>1.57</upper>
+				</limit>
+				<dynamics>
+					<friction>0.1</friction>
+					<damping>0.1</damping>
+				</dynamics>
+			</axis>
+		</joint>
+
+		<link name="link_whiskeye_head_whiskerfree">
+			<inertial>
+<!-- centre of joint rotation <pose>0.13715 0 0.42743 0 0 0</pose> -->
+				<pose>0.175 0 0.57 0 0 0</pose>
+				<mass>2.000 </mass>
+				<inertia>
+					<ixx>0.005236</ixx>
+					<ixy>0</ixy>
+					<ixz>0</ixz>
+					<iyy>0.005236</iyy>
+					<iyz>0</iyz>
+					<izz>0.007854</izz>
+				</inertia>
+			</inertial>
+			<visual name="visual_whiskeye_head_whiskerfree">
+				<pose>0 0 0 0 0 0</pose>
+				<geometry>
+					<mesh>
+						<uri>model://whiskeye_gazebo/mesh/hi/whiskeye_head.dae</uri>
+					</mesh>
+				</geometry>
+<!--				
+				<material>
+					<script>
+						<uri>model://media/materials/scripts/gazebo.material</uri>
+						<name>Gazebo/DarkGrey</name>
+					</script>
+				</material>
+-->
+			</visual>
+			<collision name="collision_whiskeye_head_whiskerfree">
+				<pose>0 0 0 0 0 0</pose>
+				<geometry>
+					<mesh>
+						<uri>model://whiskeye_gazebo/mesh/lo/whiskeye_head.dae</uri>
+					</mesh>
+				</geometry>
+				<surface>
+					<friction>
+						<ode>
+							<mu>0.1</mu>
+							<mu2>0.1</mu2>
+						</ode>
+					</friction>
+				</surface>
+			</collision>
+
+			<visual name="visual_whiskeye_row1">
+				<pose>0 0 0 0 0 0</pose>
+				<geometry>
+					<mesh>
+						<uri>model://whiskeye_gazebo/mesh/hi/whiskeye_row1.dae</uri>
+					</mesh>
+				</geometry>
+			</visual>
+			<collision name="collision_whiskeye_row2">
+				<pose>0 0 0 0 0 0</pose>
+				<geometry>
+					<mesh>
+						<uri>model://whiskeye_gazebo/mesh/lo/whiskeye_row1.dae</uri>
+					</mesh>
+				</geometry>
+				<surface>
+					<friction>
+						<ode>
+							<mu>0.1</mu>
+							<mu2>0.1</mu2>
+						</ode>
+					</friction>
+				</surface>
+			</collision>
+
+			<visual name="visual_whiskeye_row2">
+				<pose>0 0 0 0 0 0</pose>
+				<geometry>
+					<mesh>
+						<uri>model://whiskeye_gazebo/mesh/hi/whiskeye_row2.dae</uri>
+					</mesh>
+				</geometry>
+			</visual>
+			<collision name="collision_whiskeye_row2">
+				<pose>0 0 0 0 0 0</pose>
+				<geometry>
+					<mesh>
+						<uri>model://whiskeye_gazebo/mesh/lo/whiskeye_row2.dae</uri>
+					</mesh>
+				</geometry>
+				<surface>
+					<friction>
+						<ode>
+							<mu>0.1</mu>
+							<mu2>0.1</mu2>
+						</ode>
+					</friction>
+				</surface>
+			</collision>
+
+			<visual name="visual_whiskeye_row3">
+				<pose>0 0 0 0 0 0</pose>
+				<geometry>
+					<mesh>
+						<uri>model://whiskeye_gazebo/mesh/hi/whiskeye_row3.dae</uri>
+					</mesh>
+				</geometry>
+			</visual>
+			<collision name="collision_whiskeye_row2">
+				<pose>0 0 0 0 0 0</pose>
+				<geometry>
+					<mesh>
+						<uri>model://whiskeye_gazebo/mesh/lo/whiskeye_row3.dae</uri>
+					</mesh>
+				</geometry>
+				<surface>
+					<friction>
+						<ode>
+							<mu>0.1</mu>
+							<mu2>0.1</mu2>
+						</ode>
+					</friction>
+				</surface>
+			</collision>
+
+			<visual name="visual_whiskeye_row4">
+				<pose>0 0 0 0 0 0</pose>
+				<geometry>
+					<mesh>
+						<uri>model://whiskeye_gazebo/mesh/hi/whiskeye_row4.dae</uri>
+					</mesh>
+				</geometry>
+			</visual>
+			<collision name="collision_whiskeye_row2">
+				<pose>0 0 0 0 0 0</pose>
+				<geometry>
+					<mesh>
+						<uri>model://whiskeye_gazebo/mesh/lo/whiskeye_row4.dae</uri>
+					</mesh>
+				</geometry>
+				<surface>
+					<friction>
+						<ode>
+							<mu>0.1</mu>
+							<mu2>0.1</mu2>
+						</ode>
+					</friction>
+				</surface>
+			</collision>
+
+			<visual name="visual_whiskeye_row5">
+				<pose>0 0 0 0 0 0</pose>
+				<geometry>
+					<mesh>
+						<uri>model://whiskeye_gazebo/mesh/hi/whiskeye_row5.dae</uri>
+					</mesh>
+				</geometry>
+			</visual>
+			<collision name="collision_whiskeye_row2">
+				<pose>0 0 0 0 0 0</pose>
+				<geometry>
+					<mesh>
+						<uri>model://whiskeye_gazebo/mesh/lo/whiskeye_row5.dae</uri>
+					</mesh>
+				</geometry>
+				<surface>
+					<friction>
+						<ode>
+							<mu>0.1</mu>
+							<mu2>0.1</mu2>
+						</ode>
+					</friction>
+				</surface>
+			</collision>
+
+			<visual name="visual_whiskeye_row6">
+				<pose>0 0 0 0 0 0</pose>
+				<geometry>
+					<mesh>
+						<uri>model://whiskeye_gazebo/mesh/hi/whiskeye_row6.dae</uri>
+					</mesh>
+				</geometry>
+			</visual>
+			<collision name="collision_whiskeye_row2">
+				<pose>0 0 0 0 0 0</pose>
+				<geometry>
+					<mesh>
+						<uri>model://whiskeye_gazebo/mesh/lo/whiskeye_row6.dae</uri>
+					</mesh>
+				</geometry>
+				<surface>
+					<friction>
+						<ode>
+							<mu>0.1</mu>
+							<mu2>0.1</mu2>
+						</ode>
+					</friction>
+				</surface>
+			</collision>
+
+		</link>
+
+
+### helper for control
+
+		<link name="world_helper2">
+			<inertial>
+				<pose>0.000000 0.000000 0.0  0 0 0</pose>
+				<mass>0.1000 </mass>
+				<inertia>
+					<ixx>0.005236</ixx>
+					<ixy>0</ixy>
+					<ixz>0</ixz>
+					<iyy>0.005236</iyy>
+					<iyz>0</iyz>
+					<izz>0.007854</izz>
+				</inertia>
+			</inertial>
+		</link>
+		<link name="world_helper3">
+			<inertial>
+				<pose>0.000000 0.000000 0.0  0 0 0</pose>
+				<mass>0.1000 </mass>
+				<inertia>
+					<ixx>0.005236</ixx>
+					<ixy>0</ixy>
+					<ixz>0</ixz>
+					<iyy>0.005236</iyy>
+					<iyz>0</iyz>
+					<izz>0.007854</izz>
+				</inertia>
+			</inertial>
+		</link>
+
+		<joint type="prismatic" name="world1">
+			<pose>0.13715 0 0.42743 0 0 0</pose>
+			<parent>world</parent>
+			<child>world_helper2</child>
+			<axis>
+				<xyz>1 0 0</xyz>
+				<limit>
+
+					<lower>-1.57</lower>
+					<upper>1.57</upper>
+				</limit>
+				<dynamics>
+					<friction>0.1</friction>
+					<damping>0.1</damping>
+				</dynamics>
+			</axis>
+		</joint>
+
+
+		<joint type="prismatic" name="world2">
+			<pose>0.13715 0 0.42743 0 0 0</pose>
+			<parent>world_helper2</parent>
+			<child>world_helper3</child>
+			<axis>
+				<xyz>0 1 0</xyz>
+				<limit>
+
+					<lower>-1.57</lower>
+					<upper>1.57</upper>
+				</limit>
+		
+				<dynamics>
+					<friction>0.1</friction>
+					<damping>0.1</damping>
+				</dynamics>
+			</axis>
+		</joint>
+
+		<joint type="revolute" name="world3">
+			<pose>0.13715 0 0.42743 0 0 0</pose>
+			<parent>world_helper3</parent>
+			<child>link_whiskeye_body</child>
+			<axis>
+				<xyz>0 0 1</xyz>
+					<limit>
+		
+					<lower>-1.57</lower>
+					<upper>1.57</upper>
+				</limit>
+		
+				<dynamics>
+					<friction>0.1</friction>
+					<damping>0.1</damping>
+				</dynamics>
+			</axis>
+		</joint>
+
+
+ <plugin filename="libgeneric_controller_plugin.so" name="world_controller">
+   
+    <controller joint_name="world1">
+        <type>position</type>
+	<pid>50 10 50</pid>
+    </controller>
+
+    <controller joint_name="world2">
+        <type>position</type>
+	<pid>50 1 5</pid>
+    </controller>
+
+    <controller joint_name="world3">
+        <type>position</type>
+	<pid>50 1 5</pid>
+    </controller>
+
+  </plugin>
+
+	</model>
+</sdf>
+
