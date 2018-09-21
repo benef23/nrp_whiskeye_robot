@@ -1,19 +1,21 @@
 <ExD 
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
   xmlns="http://schemas.humanbrainproject.eu/SP10/2014/ExDConfig" xsi:schemaLocation="http://schemas.humanbrainproject.eu/SP10/2014/ExDConfig ../ExDConfFile.xsd">
-  <name>Whiskeye Robot in the Neurorobotics Platform</name>
-  <thumbnail>whisker.png</thumbnail>
-  <description>This experiment loads the Whiskeye robot in the Holodeck environment.</description>
-  <tags>robotics holodeck</tags>
-  <timeout>1000000</timeout>
-  <configuration type="3d-settings" src="whisker.ini" />
-  <configuration type="brainvisualizer" src="whisker.json" />
-  <configuration type="user-interaction-settings" src="whisker.uis" />
+  <name>Whiskeye New</name>
+  <thumbnail>ExDXMLExample.jpg</thumbnail>
+  <description>This experiment loads the Husky robot from Clearpath Robotics in the Holodeck environment.
+        If the user starts the experiment, the Braitenberg vehicle network is executed
+        and the robot will turn around itself in place, until the camera detects a red color. Then,
+        the robot will move towards the colored object. In this experiment, the user can interact
+        and change the color of both screens by clicking on them with the right mouse button.</description>
+  <tags>husky robotics holodeck braitenberg</tags>
+  <timeout>840</timeout>
+  <configuration type="3d-settings" src="ExDXMLExample.ini" />
+  <configuration type="brainvisualizer" src="brainvisualizer.json" />
+  <configuration type="user-interaction-settings" src="ExDXMLExample.uis" />
   <maturity>production</maturity>
   <environmentModel src="virtual_room.sdf">
-    <robotPose robotId="whiskeyea" x="0.0" y="0.0" z="0.1" roll="0.0" pitch="-0.0" yaw="3.14159265359" />
-    <robotPose robotId="whiskeyeb" x="2.0" y="0.0" z="0.1" roll="0.0" pitch="-0.0" yaw="3.14159265359" />
-    <robotPose robotId="whiskeyec" x="0.0" y="2.0" z="0.1" roll="0.0" pitch="-0.0" yaw="3.14159265359" />
+    <robotPose x="0.0" y="0.0" z="0.05" roll="0.0" pitch="-0.0" yaw="3.14159265359" />
   </environmentModel>
   <bibiConf src="bibi_configuration.bibi" />
   <cameraPose>

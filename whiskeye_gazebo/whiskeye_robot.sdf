@@ -22,14 +22,7 @@
 						<uri>model://whiskeye_gazebo/mesh/hi/whiskeye_body.dae</uri>
 					</mesh>
 				</geometry>
-<!--
-				<material>
-					<script>
-						<uri>model://media/materials/scripts/gazebo.material</uri>
-						<name>Gazebo/DarkGrey</name>
-					</script>
-				</material>
--->
+
 			</visual>
 			<collision name="collision_whiskeye_body">
 				<pose>0 0 0 0 0 0</pose>
@@ -47,9 +40,9 @@
 					</friction>
 				</surface>
 			</collision>
-
 		</link>
 
+<!-- Neck -->
 		<joint type="revolute" name="joint_whiskeye_neck">
 			<pose>0.12865 0 0.07985 0 0 0</pose>
 			<parent>link_whiskeye_body</parent>
@@ -88,14 +81,7 @@
 						<uri>model://whiskeye_gazebo/mesh/hi/whiskeye_neck.dae</uri>
 					</mesh>
 				</geometry>
-<!--				
-				<material>
-					<script>
-						<uri>model://media/materials/scripts/gazebo.material</uri>
-						<name>Gazebo/DarkGrey</name>
-					</script>
-				</material>
--->
+
 			</visual>
 			<collision name="collision_whiskeye_neck">
 				<pose>0 0 0 0 0 0</pose>
@@ -113,9 +99,9 @@
 					</friction>
 				</surface>
 			</collision>
-
 		</link>
 
+<!-- Gimbal -->
 		<joint type="revolute" name="joint_whiskeye_gmbl">
 			<pose>0.1688 0 0.32702 0 0 0</pose>
 			<parent>link_whiskeye_neck</parent>
@@ -154,14 +140,6 @@
 						<uri>model://whiskeye_gazebo/mesh/hi/whiskeye_gmbl.dae</uri>
 					</mesh>
 				</geometry>
-<!--				
-				<material>
-					<script>
-						<uri>model://media/materials/scripts/gazebo.material</uri>
-						<name>Gazebo/DarkGrey</name>
-					</script>
-				</material>
--->
 			</visual>
 			<collision name="collision_whiskeye_gmbl">
 				<pose>0 0 0 0 0 0</pose>
@@ -179,9 +157,9 @@
 					</friction>
 				</surface>
 			</collision>
-
 		</link>
 
+<!-- Head -->
 		<joint type="revolute" name="joint_whiskeye_head_whiskerfree">
 			<pose>0.13715 0 0.42743 0 0 0</pose>
 			<parent>link_whiskeye_gmbl</parent>
@@ -202,7 +180,6 @@
 
 		<link name="link_whiskeye_head_whiskerfree">
 			<inertial>
-<!-- centre of joint rotation <pose>0.13715 0 0.42743 0 0 0</pose> -->
 				<pose>0.175 0 0.57 0 0 0</pose>
 				<mass>2.000 </mass>
 				<inertia>
@@ -218,23 +195,16 @@
 				<pose>0 0 0 0 0 0</pose>
 				<geometry>
 					<mesh>
-						<uri>model://whiskeye_gazebo/mesh/hi/whiskeye_head.dae</uri>
+						<uri>model://whiskeye_gazebo/mesh/hi/whiskeye_head_red.dae</uri>
 					</mesh>
 				</geometry>
-<!--				
-				<material>
-					<script>
-						<uri>model://media/materials/scripts/gazebo.material</uri>
-						<name>Gazebo/DarkGrey</name>
-					</script>
-				</material>
--->
+
 			</visual>
 			<collision name="collision_whiskeye_head_whiskerfree">
 				<pose>0 0 0 0 0 0</pose>
 				<geometry>
 					<mesh>
-						<uri>model://whiskeye_gazebo/mesh/lo/whiskeye_head.dae</uri>
+						<uri>model://whiskeye_gazebo/mesh/lo/whiskeye_head_red.dae</uri>
 					</mesh>
 				</geometry>
 				<surface>
@@ -305,7 +275,7 @@
 					</mesh>
 				</geometry>
 			</visual>
-			<collision name="collision_whiskeye_row2">
+			<collision name="collision_whiskeye_row3">
 				<pose>0 0 0 0 0 0</pose>
 				<geometry>
 					<mesh>
@@ -330,7 +300,7 @@
 					</mesh>
 				</geometry>
 			</visual>
-			<collision name="collision_whiskeye_row2">
+			<collision name="collision_whiskeye_row4">
 				<pose>0 0 0 0 0 0</pose>
 				<geometry>
 					<mesh>
@@ -355,7 +325,7 @@
 					</mesh>
 				</geometry>
 			</visual>
-			<collision name="collision_whiskeye_row2">
+			<collision name="collision_whiskeye_row5">
 				<pose>0 0 0 0 0 0</pose>
 				<geometry>
 					<mesh>
@@ -380,7 +350,7 @@
 					</mesh>
 				</geometry>
 			</visual>
-			<collision name="collision_whiskeye_row2">
+			<collision name="collision_whiskeye_row6">
 				<pose>0 0 0 0 0 0</pose>
 				<geometry>
 					<mesh>
@@ -396,9 +366,1383 @@
 					</friction>
 				</surface>
 			</collision>
+		</link>
+
+<!-- Whisker row 1 -->
+		<joint type="revolute" name="joint_whiskeye_whisker1_1">
+			<pose>0.204635 -0.066575 0.57959 0 0 0</pose>
+			<parent>link_whiskeye_head_whiskerfree</parent>
+			<child>link_whiskeye_whisker1_1</child>
+			<axis>
+				<xyz>0.9794 0.21847713 -0.052994594</xyz>
+				<limit>
+					<!-- +/- 90 deg -->
+					<lower>-1.57</lower>
+					<upper>1.57</upper>
+				</limit>
+				<dynamics>
+					<friction>0.1</friction>
+					<damping>0.1</damping>
+				</dynamics>
+			</axis>
+		</joint>
+
+		<link name="link_whiskeye_whisker1_1">
+			<inertial>
+				<pose>0.204635 -0.066575 0.57959 0 0 0</pose>
+				<mass>0.003 </mass>
+				<inertia>
+					<ixx>0.005236</ixx>
+					<ixy>0</ixy>
+					<ixz>0</ixz>
+					<iyy>0.005236</iyy>
+					<iyz>0</iyz>
+					<izz>0.007854</izz>
+				</inertia>
+			</inertial>
+			<visual name="visual_whiskeye_whisker1_1">
+				<pose>0 0 0 0 0 0</pose>			
+				<geometry>
+					<mesh>
+						<uri>model://whiskeye_gazebo/mesh/hi/whiskeye_whisker1_1.dae</uri>
+					</mesh>
+				</geometry>
+			</visual>
+			<collision name="collision_whiskeye_whisker1_1">
+				<pose>0 0 0 0 0 0</pose>
+				<geometry>
+					<mesh>
+						<uri>model://whiskeye_gazebo/mesh/lo/whiskeye_whisker1_1.dae</uri>
+					</mesh>
+				</geometry>
+				<surface>
+					<friction>
+						<ode>
+							<mu>0.1</mu>
+							<mu2>0.1</mu2>
+						</ode>
+					</friction>
+				</surface>
+			</collision>
+		</link>
+
+		<joint type="revolute" name="joint_whiskeye_whisker1_2">
+			<pose>0.206245 -0.079485 0.567145 0 0 0</pose>
+			<parent>link_whiskeye_head_whiskerfree</parent>
+			<child>link_whiskeye_whisker1_2</child>
+			<axis>
+				<xyz>0.982670631 0.184532042 -0.017503039</xyz>
+				<limit>
+					<!-- +/- 90 deg -->
+					<lower>-1.57</lower>
+					<upper>1.57</upper>
+				</limit>
+				<dynamics>
+					<friction>0.1</friction>
+					<damping>0.1</damping>
+				</dynamics>
+			</axis>
+		</joint>
+
+		<link name="link_whiskeye_whisker1_2">
+			<inertial>
+				<pose>0.206245 -0.079485 0.567145 0 0 0</pose>
+				<mass>0.003 </mass>
+				<inertia>
+					<ixx>0.005236</ixx>
+					<ixy>0</ixy>
+					<ixz>0</ixz>
+					<iyy>0.005236</iyy>
+					<iyz>0</iyz>
+					<izz>0.007854</izz>
+				</inertia>
+			</inertial>
+			<visual name="visual_whiskeye_whisker1_2">
+				<pose>0 0 0 0 0 0</pose>			
+				<geometry>
+					<mesh>
+						<uri>model://whiskeye_gazebo/mesh/hi/whiskeye_whisker1_2.dae</uri>
+					</mesh>
+				</geometry>
+			</visual>
+			<collision name="collision_whiskeye_whisker1_2">
+				<pose>0 0 0 0 0 0</pose>
+				<geometry>
+					<mesh>
+						<uri>model://whiskeye_gazebo/mesh/lo/whiskeye_whisker1_2.dae</uri>
+					</mesh>
+				</geometry>
+				<surface>
+					<friction>
+						<ode>
+							<mu>0.1</mu>
+							<mu2>0.1</mu2>
+						</ode>
+					</friction>
+				</surface>
+			</collision>
+		</link>
+
+		<joint type="revolute" name="joint_whiskeye_whisker1_3">
+			<pose>0.20758 -0.092025 0.554335 0 0 0</pose>
+			<parent>link_whiskeye_head_whiskerfree</parent>
+			<child>link_whiskeye_whisker1_3</child>
+			<axis>
+				<xyz>0.98861575 0.149441916 0.017493201</xyz>
+				<limit>
+					<!-- +/- 90 deg -->
+					<lower>-1.57</lower>
+					<upper>1.57</upper>
+				</limit>
+				<dynamics>
+					<friction>0.1</friction>
+					<damping>0.1</damping>
+				</dynamics>
+			</axis>
+		</joint>
+
+		<link name="link_whiskeye_whisker1_3">
+			<inertial>
+				<pose>0.20758 -0.092025 0.554335 0 0 0</pose>
+				<mass>0.003 </mass>
+				<inertia>
+					<ixx>0.005236</ixx>
+					<ixy>0</ixy>
+					<ixz>0</ixz>
+					<iyy>0.005236</iyy>
+					<iyz>0</iyz>
+					<izz>0.007854</izz>
+				</inertia>
+			</inertial>
+			<visual name="visual_whiskeye_whisker1_3">
+				<pose>0 0 0 0 0 0</pose>			
+				<geometry>
+					<mesh>
+						<uri>model://whiskeye_gazebo/mesh/hi/whiskeye_whisker1_3.dae</uri>
+					</mesh>
+				</geometry>
+			</visual>
+			<collision name="collision_whiskeye_whisker1_3">
+				<pose>0 0 0 0 0 0</pose>
+				<geometry>
+					<mesh>
+						<uri>model://whiskeye_gazebo/mesh/lo/whiskeye_whisker1_3.dae</uri>
+					</mesh>
+				</geometry>
+				<surface>
+					<friction>
+						<ode>
+							<mu>0.1</mu>
+							<mu2>0.1</mu2>
+						</ode>
+					</friction>
+				</surface>
+			</collision>
+		</link>
+
+		<joint type="revolute" name="joint_whiskeye_whisker1_4">
+			<pose>0.20888 -0.10423 0.54165 0 0 0</pose>
+			<parent>link_whiskeye_head_whiskerfree</parent>
+			<child>link_whiskeye_whisker1_4</child>
+			<axis>
+				<xyz>0.992064982 0.114007468 0.053003472</xyz>
+				<limit>
+					<!-- +/- 90 deg -->
+					<lower>-1.57</lower>
+					<upper>1.57</upper>
+				</limit>
+				<dynamics>
+					<friction>0.1</friction>
+					<damping>0.1</damping>
+				</dynamics>
+			</axis>
+		</joint>
+
+		<link name="link_whiskeye_whisker1_4">
+			<inertial>
+				<pose>0.20888 -0.10423 0.54165 0 0 0</pose>
+				<mass>0.003 </mass>
+				<inertia>
+					<ixx>0.005236</ixx>
+					<ixy>0</ixy>
+					<ixz>0</ixz>
+					<iyy>0.005236</iyy>
+					<iyz>0</iyz>
+					<izz>0.007854</izz>
+				</inertia>
+			</inertial>
+			<visual name="visual_whiskeye_whisker1_4">
+				<pose>0 0 0 0 0 0</pose>			
+				<geometry>
+					<mesh>
+						<uri>model://whiskeye_gazebo/mesh/hi/whiskeye_whisker1_4.dae</uri>
+					</mesh>
+				</geometry>
+			</visual>
+			<collision name="collision_whiskeye_whisker1_4">
+				<pose>0 0 0 0 0 0</pose>
+				<geometry>
+					<mesh>
+						<uri>model://whiskeye_gazebo/mesh/lo/whiskeye_whisker1_4.dae</uri>
+					</mesh>
+				</geometry>
+				<surface>
+					<friction>
+						<ode>
+							<mu>0.1</mu>
+							<mu2>0.1</mu2>
+						</ode>
+					</friction>
+				</surface>
+			</collision>
+		</link>
+
+<!-- Whisker row 2 -->
+		<joint type="revolute" name="joint_whiskeye_whisker2_1">
+			<pose>0.15761 -0.065605 0.588975 0 0 0</pose>
+			<parent>link_whiskeye_head_whiskerfree</parent>
+			<child>link_whiskeye_whisker2_1</child>
+			<axis>
+				<xyz>0.948071819 -0.31352375 -0.053504053</xyz>
+				<limit>
+					<!-- +/- 90 deg -->
+					<lower>-1.57</lower>
+					<upper>1.57</upper>
+				</limit>
+				<dynamics>
+					<friction>0.1</friction>
+					<damping>0.1</damping>
+				</dynamics>
+			</axis>
+		</joint>
+
+		<link name="link_whiskeye_whisker2_1">
+			<inertial>
+				<pose>0.15761 -0.065605 0.588975 0 0 0</pose>
+				<mass>0.003 </mass>
+				<inertia>
+					<ixx>0.005236</ixx>
+					<ixy>0</ixy>
+					<ixz>0</ixz>
+					<iyy>0.005236</iyy>
+					<iyz>0</iyz>
+					<izz>0.007854</izz>
+				</inertia>
+			</inertial>
+			<visual name="visual_whiskeye_whisker2_1">
+				<pose>0 0 0 0 0 0</pose>			
+				<geometry>
+					<mesh>
+						<uri>model://whiskeye_gazebo/mesh/hi/whiskeye_whisker2_1.dae</uri>
+					</mesh>
+				</geometry>
+			</visual>
+			<collision name="collision_whiskeye_whisker2_1">
+				<pose>0 0 0 0 0 0</pose>
+				<geometry>
+					<mesh>
+						<uri>model://whiskeye_gazebo/mesh/lo/whiskeye_whisker2_1.dae</uri>
+					</mesh>
+				</geometry>
+				<surface>
+					<friction>
+						<ode>
+							<mu>0.1</mu>
+							<mu2>0.1</mu2>
+						</ode>
+					</friction>
+				</surface>
+			</collision>
 
 		</link>
 
+		<joint type="revolute" name="joint_whiskeye_whisker2_2">
+			<pose>0.152355 -0.07449 0.57651 0 0 0</pose>
+			<parent>link_whiskeye_head_whiskerfree</parent>
+			<child>link_whiskeye_whisker2_2</child>
+			<axis>
+				<xyz>0.937669147 -0.347062607 -0.018003248</xyz>
+				<limit>
+					<!-- +/- 90 deg -->
+					<lower>-1.57</lower>
+					<upper>1.57</upper>
+				</limit>
+				<dynamics>
+					<friction>0.1</friction>
+					<damping>0.1</damping>
+				</dynamics>
+			</axis>
+		</joint>
+
+		<link name="link_whiskeye_whisker2_2">
+			<inertial>
+				<pose>0.152355 -0.07449 0.57651 0 0 0</pose>
+				<mass>0.003 </mass>
+				<inertia>
+					<ixx>0.005236</ixx>
+					<ixy>0</ixy>
+					<ixz>0</ixz>
+					<iyy>0.005236</iyy>
+					<iyz>0</iyz>
+					<izz>0.007854</izz>
+				</inertia>
+			</inertial>
+			<visual name="visual_whiskeye_whisker2_2">
+				<pose>0 0 0 0 0 0</pose>			
+				<geometry>
+					<mesh>
+						<uri>model://whiskeye_gazebo/mesh/hi/whiskeye_whisker2_2.dae</uri>
+					</mesh>
+				</geometry>
+			</visual>
+			<collision name="collision_whiskeye_whisker2_2">
+				<pose>0 0 0 0 0 0</pose>
+				<geometry>
+					<mesh>
+						<uri>model://whiskeye_gazebo/mesh/lo/whiskeye_whisker2_2.dae</uri>
+					</mesh>
+				</geometry>
+				<surface>
+					<friction>
+						<ode>
+							<mu>0.1</mu>
+							<mu2>0.1</mu2>
+						</ode>
+					</friction>
+				</surface>
+			</collision>
+
+		</link>
+		<joint type="revolute" name="joint_whiskeye_whisker2_3">
+			<pose>0.14704 -0.085945 0.56367 0 0 0</pose>
+			<parent>link_whiskeye_head_whiskerfree</parent>
+			<child>link_whiskeye_whisker2_3</child>
+			<axis>
+				<xyz>0.924679076 -0.380367988 0.016994102</xyz>
+				<limit>
+					<!-- +/- 90 deg -->
+					<lower>-1.57</lower>
+					<upper>1.57</upper>
+				</limit>
+				<dynamics>
+					<friction>0.1</friction>
+					<damping>0.1</damping>
+				</dynamics>
+			</axis>
+		</joint>
+
+		<link name="link_whiskeye_whisker2_3">
+			<inertial>
+				<pose>0.14704 -0.085945 0.56367 0 0 0</pose>
+				<mass>0.003 </mass>
+				<inertia>
+					<ixx>0.005236</ixx>
+					<ixy>0</ixy>
+					<ixz>0</ixz>
+					<iyy>0.005236</iyy>
+					<iyz>0</iyz>
+					<izz>0.007854</izz>
+				</inertia>
+			</inertial>
+			<visual name="visual_whiskeye_whisker2_3">
+				<pose>0 0 0 0 0 0</pose>			
+				<geometry>
+					<mesh>
+						<uri>model://whiskeye_gazebo/mesh/hi/whiskeye_whisker2_3.dae</uri>
+					</mesh>
+				</geometry>
+			</visual>
+			<collision name="collision_whiskeye_whisker2_3">
+				<pose>0 0 0 0 0 0</pose>
+				<geometry>
+					<mesh>
+						<uri>model://whiskeye_gazebo/mesh/lo/whiskeye_whisker2_3.dae</uri>
+					</mesh>
+				</geometry>
+				<surface>
+					<friction>
+						<ode>
+							<mu>0.1</mu>
+							<mu2>0.1</mu2>
+						</ode>
+					</friction>
+				</surface>
+			</collision>
+
+		</link>
+
+		<joint type="revolute" name="joint_whiskeye_whisker2_4">
+			<pose>0.141885 -0.097065 0.550435 0 0 0</pose>
+			<parent>link_whiskeye_head_whiskerfree</parent>
+			<child>link_whiskeye_whisker2_4</child>
+			<axis>
+				<xyz>0.909453278 -0.4124788094 0.052497303</xyz>
+				<limit>
+					<!-- +/- 90 deg -->
+					<lower>-1.57</lower>
+					<upper>1.57</upper>
+				</limit>
+				<dynamics>
+					<friction>0.1</friction>
+					<damping>0.1</damping>
+				</dynamics>
+			</axis>
+		</joint>
+
+		<link name="link_whiskeye_whisker2_4">
+			<inertial>
+				<pose>0.141885 -0.097065 0.550435 0 0 0</pose>
+				<mass>0.003 </mass>
+				<inertia>
+					<ixx>0.005236</ixx>
+					<ixy>0</ixy>
+					<ixz>0</ixz>
+					<iyy>0.005236</iyy>
+					<iyz>0</iyz>
+					<izz>0.007854</izz>
+				</inertia>
+			</inertial>
+			<visual name="visual_whiskeye_whisker2_4">
+				<pose>0 0 0 0 0 0</pose>			
+				<geometry>
+					<mesh>
+						<uri>model://whiskeye_gazebo/mesh/hi/whiskeye_whisker2_4.dae</uri>
+					</mesh>
+				</geometry>
+			</visual>
+			<collision name="collision_whiskeye_whisker2_4">
+				<pose>0 0 0 0 0 0</pose>
+				<geometry>
+					<mesh>
+						<uri>model://whiskeye_gazebo/mesh/lo/whiskeye_whisker2_4.dae</uri>
+					</mesh>
+				</geometry>
+				<surface>
+					<friction>
+						<ode>
+							<mu>0.1</mu>
+							<mu2>0.1</mu2>
+						</ode>
+					</friction>
+				</surface>
+			</collision>
+		</link>
+
+<!-- Whisker row 3 -->
+		<joint type="revolute" name="joint_whiskeye_whisker3_1">
+			<pose>0.120155 -0.02735 0.597865 0 0 0</pose>
+			<parent>link_whiskeye_head_whiskerfree</parent>
+			<child>link_whiskeye_whisker3_1</child>
+			<axis>
+				<xyz>0.436543984 -0.898090487 -0.053505391</xyz>
+				<limit>
+					<!-- +/- 90 deg -->
+					<lower>-1.57</lower>
+					<upper>1.57</upper>
+				</limit>
+				<dynamics>
+					<friction>0.1</friction>
+					<damping>0.1</damping>
+				</dynamics>
+			</axis>
+		</joint>
+
+		<link name="link_whiskeye_whisker3_1">
+			<inertial>
+				<pose>0.120155 -0.02735 0.597865 0 0 0</pose>
+				<mass>0.003 </mass>
+				<inertia>
+					<ixx>0.005236</ixx>
+					<ixy>0</ixy>
+					<ixz>0</ixz>
+					<iyy>0.005236</iyy>
+					<iyz>0</iyz>
+					<izz>0.007854</izz>
+				</inertia>
+			</inertial>
+			<visual name="visual_whiskeye_whisker3_1">
+				<pose>0 0 0 0 0 0</pose>			
+				<geometry>
+					<mesh>
+						<uri>model://whiskeye_gazebo/mesh/hi/whiskeye_whisker3_1.dae</uri>
+					</mesh>
+				</geometry>
+			</visual>
+			<collision name="collision_whiskeye_whisker3_1">
+				<pose>0 0 0 0 0 0</pose>
+				<geometry>
+					<mesh>
+						<uri>model://whiskeye_gazebo/mesh/lo/whiskeye_whisker3_1.dae</uri>
+					</mesh>
+				</geometry>
+				<surface>
+					<friction>
+						<ode>
+							<mu>0.1</mu>
+							<mu2>0.1</mu2>
+						</ode>
+					</friction>
+				</surface>
+			</collision>
+		</link>
+
+		<joint type="revolute" name="joint_whiskeye_whisker3_2">
+			<pose>0.10796 -0.03187 0.585415 0 0 0</pose>
+			<parent>link_whiskeye_head_whiskerfree</parent>
+			<child>link_whiskeye_whisker3_2</child>
+			<axis>
+				<xyz>0.4050479504 -0.914108214 -0.0185021903</xyz>
+				<limit>
+					<!-- +/- 90 deg -->
+					<lower>-1.57</lower>
+					<upper>1.57</upper>
+				</limit>
+				<dynamics>
+					<friction>0.1</friction>
+					<damping>0.1</damping>
+				</dynamics>
+			</axis>
+		</joint>
+
+		<link name="link_whiskeye_whisker3_2">
+			<inertial>
+				<pose>0.10796 -0.03187 0.585415 0 0 0</pose>
+				<mass>0.003 </mass>
+				<inertia>
+					<ixx>0.005236</ixx>
+					<ixy>0</ixy>
+					<ixz>0</ixz>
+					<iyy>0.005236</iyy>
+					<iyz>0</iyz>
+					<izz>0.007854</izz>
+				</inertia>
+			</inertial>
+			<visual name="visual_whiskeye_whisker3_2">
+				<pose>0 0 0 0 0 0</pose>			
+				<geometry>
+					<mesh>
+						<uri>model://whiskeye_gazebo/mesh/hi/whiskeye_whisker3_2.dae</uri>
+					</mesh>
+				</geometry>
+			</visual>
+			<collision name="collision_whiskeye_whisker3_2">
+				<pose>0 0 0 0 0 0</pose>
+				<geometry>
+					<mesh>
+						<uri>model://whiskeye_gazebo/mesh/lo/whiskeye_whisker3_2.dae</uri>
+					</mesh>
+				</geometry>
+				<surface>
+					<friction>
+						<ode>
+							<mu>0.1</mu>
+							<mu2>0.1</mu2>
+						</ode>
+					</friction>
+				</surface>
+			</collision>
+		</link>
+
+		<joint type="revolute" name="joint_whiskeye_whisker3_3">
+			<pose>0.096035 -0.03605 0.572575 0 0 0</pose>
+			<parent>link_whiskeye_head_whiskerfree</parent>
+			<child>link_whiskeye_whisker3_3</child>
+			<axis>
+				<xyz>0.3724604282 -0.9279014157 0.0164982472</xyz>
+				<limit>
+					<!-- +/- 90 deg -->
+					<lower>-1.57</lower>
+					<upper>1.57</upper>
+				</limit>
+				<dynamics>
+					<friction>0.1</friction>
+					<damping>0.1</damping>
+				</dynamics>
+			</axis>
+		</joint>
+
+		<link name="link_whiskeye_whisker3_3">
+			<inertial>
+				<pose>0.096035 -0.03605 0.572575 0 0 0</pose>
+				<mass>0.003 </mass>
+				<inertia>
+					<ixx>0.005236</ixx>
+					<ixy>0</ixy>
+					<ixz>0</ixz>
+					<iyy>0.005236</iyy>
+					<iyz>0</iyz>
+					<izz>0.007854</izz>
+				</inertia>
+			</inertial>
+			<visual name="visual_whiskeye_whisker3_3">
+				<pose>0 0 0 0 0 0</pose>			
+				<geometry>
+					<mesh>
+						<uri>model://whiskeye_gazebo/mesh/hi/whiskeye_whisker3_3.dae</uri>
+					</mesh>
+				</geometry>
+			</visual>
+			<collision name="collision_whiskeye_whisker3_3">
+				<pose>0 0 0 0 0 0</pose>
+				<geometry>
+					<mesh>
+						<uri>model://whiskeye_gazebo/mesh/lo/whiskeye_whisker3_3.dae</uri>
+					</mesh>
+				</geometry>
+				<surface>
+					<friction>
+						<ode>
+							<mu>0.1</mu>
+							<mu2>0.1</mu2>
+						</ode>
+					</friction>
+				</surface>
+			</collision>
+		</link>
+
+		<joint type="revolute" name="joint_whiskeye_whisker3_4">
+			<pose>0.084455 -0.04011 0.55935 0 0 0</pose>
+			<parent>link_whiskeye_head_whiskerfree</parent>
+			<child>link_whiskeye_whisker3_4</child>
+			<axis>
+				<xyz>0.3395534414 -0.93914781 0.0520081854</xyz>
+				<limit>
+					<!-- +/- 90 deg -->
+					<lower>-1.57</lower>
+					<upper>1.57</upper>
+				</limit>
+				<dynamics>
+					<friction>0.1</friction>
+					<damping>0.1</damping>
+				</dynamics>
+			</axis>
+		</joint>
+
+		<link name="link_whiskeye_whisker3_4">
+			<inertial>
+				<pose>0.084455 -0.04011 0.55935 0 0 0</pose>
+				<mass>0.003 </mass>
+				<inertia>
+					<ixx>0.005236</ixx>
+					<ixy>0</ixy>
+					<ixz>0</ixz>
+					<iyy>0.005236</iyy>
+					<iyz>0</iyz>
+					<izz>0.007854</izz>
+				</inertia>
+			</inertial>
+			<visual name="visual_whiskeye_whisker3_4">
+				<pose>0 0 0 0 0 0</pose>			
+				<geometry>
+					<mesh>
+						<uri>model://whiskeye_gazebo/mesh/hi/whiskeye_whisker3_4.dae</uri>
+					</mesh>
+				</geometry>
+			</visual>
+			<collision name="collision_whiskeye_whisker3_4">
+				<pose>0 0 0 0 0 0</pose>
+				<geometry>
+					<mesh>
+						<uri>model://whiskeye_gazebo/mesh/lo/whiskeye_whisker3_4.dae</uri>
+					</mesh>
+				</geometry>
+				<surface>
+					<friction>
+						<ode>
+							<mu>0.1</mu>
+							<mu2>0.1</mu2>
+						</ode>
+					</friction>
+				</surface>
+			</collision>
+		</link>
+
+<!-- Whisker row 4 -->
+		<joint type="revolute" name="joint_whiskeye_whisker4_1">
+			<pose>0.11929 0.024095 0.59792 0 0 0</pose>
+			<parent>link_whiskeye_head_whiskerfree</parent>
+			<child>link_whiskeye_whisker4_1</child>
+			<axis>
+				<xyz>-0.3389157475 -0.9392665039 -0.0539865793</xyz>
+				<limit>
+					<!-- +/- 90 deg -->
+					<lower>-1.57</lower>
+					<upper>1.57</upper>
+				</limit>
+				<dynamics>
+					<friction>0.1</friction>
+					<damping>0.1</damping>
+				</dynamics>
+			</axis>
+		</joint>
+
+		<link name="link_whiskeye_whisker4_1">
+			<inertial>
+				<pose>0.11929 0.024095 0.59792 0 0 0</pose>
+				<mass>0.003 </mass>
+				<inertia>
+					<ixx>0.005236</ixx>
+					<ixy>0</ixy>
+					<ixz>0</ixz>
+					<iyy>0.005236</iyy>
+					<iyz>0</iyz>
+					<izz>0.007854</izz>
+				</inertia>
+			</inertial>
+			<visual name="visual_whiskeye_whisker4_1">
+				<pose>0 0 0 0 0 0</pose>			
+				<geometry>
+					<mesh>
+						<uri>model://whiskeye_gazebo/mesh/hi/whiskeye_whisker4_1.dae</uri>
+					</mesh>
+				</geometry>
+			</visual>
+			<collision name="collision_whiskeye_whisker4_1">
+				<pose>0 0 0 0 0 0</pose>
+				<geometry>
+					<mesh>
+						<uri>model://whiskeye_gazebo/mesh/lo/whiskeye_whisker4_1.dae</uri>
+					</mesh>
+				</geometry>
+				<surface>
+					<friction>
+						<ode>
+							<mu>0.1</mu>
+							<mu2>0.1</mu2>
+						</ode>
+					</friction>
+				</surface>
+			</collision>
+		</link>
+
+		<joint type="revolute" name="joint_whiskeye_whisker4_2">
+			<pose>0.107535 0.02968 0.585485 0 0 0</pose>
+			<parent>link_whiskeye_head_whiskerfree</parent>
+			<child>link_whiskeye_whisker4_2</child>
+			<axis>
+				<xyz>-0.3724473955 -0.9278689478 -0.0184973874</xyz>
+				<limit>
+					<!-- +/- 90 deg -->
+					<lower>-1.57</lower>
+					<upper>1.57</upper>
+				</limit>
+				<dynamics>
+					<friction>0.1</friction>
+					<damping>0.1</damping>
+				</dynamics>
+			</axis>
+		</joint>
+
+		<link name="link_whiskeye_whisker4_2">
+			<inertial>
+				<pose>0.107535 0.02968 0.585485 0 0 0</pose>
+				<mass>0.003 </mass>
+				<inertia>
+					<ixx>0.005236</ixx>
+					<ixy>0</ixy>
+					<ixz>0</ixz>
+					<iyy>0.005236</iyy>
+					<iyz>0</iyz>
+					<izz>0.007854</izz>
+				</inertia>
+			</inertial>
+			<visual name="visual_whiskeye_whisker4_2">
+				<pose>0 0 0 0 0 0</pose>			
+				<geometry>
+					<mesh>
+						<uri>model://whiskeye_gazebo/mesh/hi/whiskeye_whisker4_2.dae</uri>
+					</mesh>
+				</geometry>
+			</visual>
+			<collision name="collision_whiskeye_whisker4_2">
+				<pose>0 0 0 0 0 0</pose>
+				<geometry>
+					<mesh>
+						<uri>model://whiskeye_gazebo/mesh/lo/whiskeye_whisker4_2.dae</uri>
+					</mesh>
+				</geometry>
+				<surface>
+					<friction>
+						<ode>
+							<mu>0.1</mu>
+							<mu2>0.1</mu2>
+						</ode>
+					</friction>
+				</surface>
+			</collision>
+		</link>
+
+		<joint type="revolute" name="joint_whiskeye_whisker4_3">
+			<pose>0.09622 0.03532 0.57266 0 0 0</pose>
+			<parent>link_whiskeye_head_whiskerfree</parent>
+			<child>link_whiskeye_whisker4_3</child>
+			<axis>
+				<xyz>-0.4050587378 -0.9141325588 0.0170024655</xyz>
+				<limit>
+					<!-- +/- 90 deg -->
+					<lower>-1.57</lower>
+					<upper>1.57</upper>
+				</limit>
+				<dynamics>
+					<friction>0.1</friction>
+					<damping>0.1</damping>
+				</dynamics>
+			</axis>
+		</joint>
+
+		<link name="link_whiskeye_whisker4_3">
+			<inertial>
+				<pose>0.09622 0.03532 0.57266 0 0 0</pose>
+				<mass>0.003 </mass>
+				<inertia>
+					<ixx>0.005236</ixx>
+					<ixy>0</ixy>
+					<ixz>0</ixz>
+					<iyy>0.005236</iyy>
+					<iyz>0</iyz>
+					<izz>0.007854</izz>
+				</inertia>
+			</inertial>
+			<visual name="visual_whiskeye_whisker4_3">
+				<pose>0 0 0 0 0 0</pose>			
+				<geometry>
+					<mesh>
+						<uri>model://whiskeye_gazebo/mesh/hi/whiskeye_whisker4_3.dae</uri>
+					</mesh>
+				</geometry>
+			</visual>
+			<collision name="collision_whiskeye_whisker4_3">
+				<pose>0 0 0 0 0 0</pose>
+				<geometry>
+					<mesh>
+						<uri>model://whiskeye_gazebo/mesh/lo/whiskeye_whisker4_3.dae</uri>
+					</mesh>
+				</geometry>
+				<surface>
+					<friction>
+						<ode>
+							<mu>0.1</mu>
+							<mu2>0.1</mu2>
+						</ode>
+					</friction>
+				</surface>
+			</collision>
+		</link>
+
+		<joint type="revolute" name="joint_whiskeye_whisker4_4">
+			<pose>0.085385 0.040575 0.559525 0 0 0</pose>
+			<parent>link_whiskeye_head_whiskerfree</parent>
+			<child>link_whiskeye_whisker4_4</child>
+			<axis>
+				<xyz>-0.4364160525 -0.8983272009 0.0504902879</xyz>
+				<limit>
+					<!-- +/- 90 deg -->
+					<lower>-1.57</lower>
+					<upper>1.57</upper>
+				</limit>
+				<dynamics>
+					<friction>0.1</friction>
+					<damping>0.1</damping>
+				</dynamics>
+			</axis>
+		</joint>
+
+		<link name="link_whiskeye_whisker4_4">
+			<inertial>
+				<pose>0.085385 0.040575 0.559525 0 0 0</pose>
+				<mass>0.003 </mass>
+				<inertia>
+					<ixx>0.005236</ixx>
+					<ixy>0</ixy>
+					<ixz>0</ixz>
+					<iyy>0.005236</iyy>
+					<iyz>0</iyz>
+					<izz>0.007854</izz>
+				</inertia>
+			</inertial>
+			<visual name="visual_whiskeye_whisker4_4">
+				<pose>0 0 0 0 0 0</pose>			
+				<geometry>
+					<mesh>
+						<uri>model://whiskeye_gazebo/mesh/hi/whiskeye_whisker4_4.dae</uri>
+					</mesh>
+				</geometry>
+			</visual>
+			<collision name="collision_whiskeye_whisker4_4">
+				<pose>0 0 0 0 0 0</pose>
+				<geometry>
+					<mesh>
+						<uri>model://whiskeye_gazebo/mesh/lo/whiskeye_whisker4_4.dae</uri>
+					</mesh>
+				</geometry>
+				<surface>
+					<friction>
+						<ode>
+							<mu>0.1</mu>
+							<mu2>0.1</mu2>
+						</ode>
+					</friction>
+				</surface>
+			</collision>
+		</link>
+
+<!-- Whisker row 5 -->
+		<joint type="revolute" name="joint_whiskeye_whisker5_1">
+			<pose>0.155725 0.06034 0.589205 0 0 0</pose>
+			<parent>link_whiskeye_head_whiskerfree</parent>
+			<child>link_whiskeye_whisker5_1</child>
+			<axis>
+				<xyz>-0.9095925558 -0.4120419274 -0.0535054445</xyz>
+				<limit>
+					<!-- +/- 90 deg -->
+					<lower>-1.57</lower>
+					<upper>1.57</upper>
+				</limit>
+				<dynamics>
+					<friction>0.1</friction>
+					<damping>0.1</damping>
+				</dynamics>
+			</axis>
+		</joint>
+
+		<link name="link_whiskeye_whisker5_1">
+			<inertial>
+				<pose>0.155725 0.06034 0.589205 0 0 0</pose>
+				<mass>0.003 </mass>
+				<inertia>
+					<ixx>0.005236</ixx>
+					<ixy>0</ixy>
+					<ixz>0</ixz>
+					<iyy>0.005236</iyy>
+					<iyz>0</iyz>
+					<izz>0.007854</izz>
+				</inertia>
+			</inertial>
+			<visual name="visual_whiskeye_whisker5_1">
+				<pose>0 0 0 0 0 0</pose>			
+				<geometry>
+					<mesh>
+						<uri>model://whiskeye_gazebo/mesh/hi/whiskeye_whisker5_1.dae</uri>
+					</mesh>
+				</geometry>
+			</visual>
+			<collision name="collision_whiskeye_whisker5_1">
+				<pose>0 0 0 0 0 0</pose>
+				<geometry>
+					<mesh>
+						<uri>model://whiskeye_gazebo/mesh/lo/whiskeye_whisker5_1.dae</uri>
+					</mesh>
+				</geometry>
+				<surface>
+					<friction>
+						<ode>
+							<mu>0.1</mu>
+							<mu2>0.1</mu2>
+						</ode>
+					</friction>
+				</surface>
+			</collision>
+		</link>
+
+		<joint type="revolute" name="joint_whiskeye_whisker5_2">
+			<pose>0.15151 0.07268 0.576795 0 0 0</pose>
+			<parent>link_whiskeye_head_whiskerfree</parent>
+			<child>link_whiskeye_whisker5_2</child>
+			<axis>
+				<xyz>-0.9248301936 -0.3799302417 -0.0184966039</xyz>
+				<limit>
+					<!-- +/- 90 deg -->
+					<lower>-1.57</lower>
+					<upper>1.57</upper>
+				</limit>
+				<dynamics>
+					<friction>0.1</friction>
+					<damping>0.1</damping>
+				</dynamics>
+			</axis>
+		</joint>
+
+		<link name="link_whiskeye_whisker5_2">
+			<inertial>
+				<pose>0.15151 0.07268 0.576795 0 0 0</pose>
+				<mass>0.003 </mass>
+				<inertia>
+					<ixx>0.005236</ixx>
+					<ixy>0</ixy>
+					<ixz>0</ixz>
+					<iyy>0.005236</iyy>
+					<iyz>0</iyz>
+					<izz>0.007854</izz>
+				</inertia>
+			</inertial>
+			<visual name="visual_whiskeye_whisker5_2">
+				<pose>0 0 0 0 0 0</pose>			
+				<geometry>
+					<mesh>
+						<uri>model://whiskeye_gazebo/mesh/hi/whiskeye_whisker5_2.dae</uri>
+					</mesh>
+				</geometry>
+			</visual>
+			<collision name="collision_whiskeye_whisker5_2">
+				<pose>0 0 0 0 0 0</pose>
+				<geometry>
+					<mesh>
+						<uri>model://whiskeye_gazebo/mesh/lo/whiskeye_whisker5_2.dae</uri>
+					</mesh>
+				</geometry>
+				<surface>
+					<friction>
+						<ode>
+							<mu>0.1</mu>
+							<mu2>0.1</mu2>
+						</ode>
+					</friction>
+				</surface>
+			</collision>
+		</link>
+
+		<joint type="revolute" name="joint_whiskeye_whisker5_3">
+			<pose>0.147635 0.084755 0.564 0 0 0</pose>
+			<parent>link_whiskeye_head_whiskerfree</parent>
+			<child>link_whiskeye_whisker5_3</child>
+			<axis>
+				<xyz>-0.9375227352 -0.3475084272 0.0170004123</xyz>
+				<limit>
+					<!-- +/- 90 deg -->
+					<lower>-1.57</lower>
+					<upper>1.57</upper>
+				</limit>
+				<dynamics>
+					<friction>0.1</friction>
+					<damping>0.1</damping>
+				</dynamics>
+			</axis>
+		</joint>
+
+		<link name="link_whiskeye_whisker5_3">
+			<inertial>
+				<pose>0.147635 0.084755 0.564 0 0 0</pose>
+				<mass>0.003 </mass>
+				<inertia>
+					<ixx>0.005236</ixx>
+					<ixy>0</ixy>
+					<ixz>0</ixz>
+					<iyy>0.005236</iyy>
+					<iyz>0</iyz>
+					<izz>0.007854</izz>
+				</inertia>
+			</inertial>
+			<visual name="visual_whiskeye_whisker5_3">
+				<pose>0 0 0 0 0 0</pose>			
+				<geometry>
+					<mesh>
+						<uri>model://whiskeye_gazebo/mesh/hi/whiskeye_whisker5_3.dae</uri>
+					</mesh>
+				</geometry>
+			</visual>
+			<collision name="collision_whiskeye_whisker5_3">
+				<pose>0 0 0 0 0 0</pose>
+				<geometry>
+					<mesh>
+						<uri>model://whiskeye_gazebo/mesh/lo/whiskeye_whisker5_3.dae</uri>
+					</mesh>
+				</geometry>
+				<surface>
+					<friction>
+						<ode>
+							<mu>0.1</mu>
+							<mu2>0.1</mu2>
+						</ode>
+					</friction>
+				</surface>
+			</collision>
+		</link>
+
+		<joint type="revolute" name="joint_whiskeye_whisker5_4">
+			<pose>0.14387 0.09647 0.55081 0 0 0</pose>
+			<parent>link_whiskeye_head_whiskerfree</parent>
+			<child>link_whiskeye_whisker5_4</child>
+			<axis>
+				<xyz>-0.947998104 -0.313999372 0.051999896</xyz>
+				<limit>
+					<!-- +/- 90 deg -->
+					<lower>-1.57</lower>
+					<upper>1.57</upper>
+				</limit>
+				<dynamics>
+					<friction>0.1</friction>
+					<damping>0.1</damping>
+				</dynamics>
+			</axis>
+		</joint>
+
+		<link name="link_whiskeye_whisker5_4">
+			<inertial>
+				<pose>0.14387 0.09647 0.55081 0 0 0</pose>
+				<mass>0.003 </mass>
+				<inertia>
+					<ixx>0.005236</ixx>
+					<ixy>0</ixy>
+					<ixz>0</ixz>
+					<iyy>0.005236</iyy>
+					<iyz>0</iyz>
+					<izz>0.007854</izz>
+				</inertia>
+			</inertial>
+			<visual name="visual_whiskeye_whisker5_4">
+				<pose>0 0 0 0 0 0</pose>			
+				<geometry>
+					<mesh>
+						<uri>model://whiskeye_gazebo/mesh/hi/whiskeye_whisker5_4.dae</uri>
+					</mesh>
+				</geometry>
+			</visual>
+			<collision name="collision_whiskeye_whisker5_4">
+				<pose>0 0 0 0 0 0</pose>
+				<geometry>
+					<mesh>
+						<uri>model://whiskeye_gazebo/mesh/lo/whiskeye_whisker5_4.dae</uri>
+					</mesh>
+				</geometry>
+				<surface>
+					<friction>
+						<ode>
+							<mu>0.1</mu>
+							<mu2>0.1</mu2>
+						</ode>
+					</friction>
+				</surface>
+			</collision>
+		</link>
+
+<!-- Whisker row 6 -->
+
+		<joint type="revolute" name="joint_whiskeye_whisker6_1">
+			<pose>0.2023 0.06603 0.57969 0 0 0</pose>
+			<parent>link_whiskeye_head_whiskerfree</parent>
+			<child>link_whiskeye_whisker6_1</child>
+			<axis>
+				<xyz>-0.9912324713 0.1210283845 -0.0530124329</xyz>
+				<limit>
+					<lower>-1.57</lower>
+					<upper>1.57</upper>
+				</limit>
+				<dynamics>
+					<friction>0.1</friction>
+					<damping>0.1</damping>
+				</dynamics>
+			</axis>
+		</joint>
+
+		<link name="link_whiskeye_whisker6_1">
+			<inertial>
+				<pose>0.2023 0.06603 0.57969 0 0 0</pose>
+				<mass>0.003 </mass>
+				<inertia>
+					<ixx>0.005236</ixx>
+					<ixy>0</ixy>
+					<ixz>0</ixz>
+					<iyy>0.005236</iyy>
+					<iyz>0</iyz>
+					<izz>0.007854</izz>
+				</inertia>
+			</inertial>
+			<visual name="visual_whiskeye_whisker6_1">
+				<pose>0 0 0 0 0 0</pose>			
+				<geometry>
+					<mesh>
+						<uri>model://whiskeye_gazebo/mesh/hi/whiskeye_whisker6_1.dae</uri>
+					</mesh>
+				</geometry>
+			</visual>
+			<collision name="collision_whiskeye_whisker6_1">
+				<pose>0 0 0 0 0 0</pose>
+				<geometry>
+					<mesh>
+						<uri>model://whiskeye_gazebo/mesh/lo/whiskeye_whisker6_1.dae</uri>
+					</mesh>
+				</geometry>
+				<surface>
+					<friction>
+						<ode>
+							<mu>0.1</mu>
+							<mu2>0.1</mu2>
+						</ode>
+					</friction>
+				</surface>
+			</collision>
+		</link>
+
+		<joint type="revolute" name="joint_whiskeye_whisker6_2">
+			<pose>0.20511 0.07873 0.56724 0 0 0</pose>
+			<parent>link_whiskeye_head_whiskerfree</parent>
+			<child>link_whiskeye_whisker6_2</child>
+			<axis>
+				<xyz>-0.9876030633 0.1559373258 -0.0179927684</xyz>
+				<limit>
+					
+					<lower>-1.57</lower>
+					<upper>1.57</upper>
+				</limit>
+				<dynamics>
+					<friction>0.1</friction>
+					<damping>0.1</damping>
+				</dynamics>
+			</axis>
+		</joint>
+
+		<link name="link_whiskeye_whisker6_2">
+			<inertial>
+				<pose>0.20511 0.07873 0.56724 0 0 0</pose>
+				<mass>0.003 </mass>
+				<inertia>
+					<ixx>0.005236</ixx>
+					<ixy>0</ixy>
+					<ixz>0</ixz>
+					<iyy>0.005236</iyy>
+					<iyz>0</iyz>
+					<izz>0.007854</izz>
+				</inertia>
+			</inertial>
+			<visual name="visual_whiskeye_whisker6_2">
+				<pose>0 0 0 0 0 0</pose>			
+				<geometry>
+					<mesh>
+						<uri>model://whiskeye_gazebo/mesh/hi/whiskeye_whisker6_2.dae</uri>
+					</mesh>
+				</geometry>
+			</visual>
+			<collision name="collision_whiskeye_whisker6_2">
+				<pose>0 0 0 0 0 0</pose>
+				<geometry>
+					<mesh>
+						<uri>model://whiskeye_gazebo/mesh/lo/whiskeye_whisker6_2.dae</uri>
+					</mesh>
+				</geometry>
+				<surface>
+					<friction>
+						<ode>
+							<mu>0.1</mu>
+							<mu2>0.1</mu2>
+						</ode>
+					</friction>
+				</surface>
+			</collision>
+		</link>
+
+		<joint type="revolute" name="joint_whiskeye_whisker6_3">
+			<pose>0.208065 0.09102 0.55441 0 0 0</pose>
+			<parent>link_whiskeye_head_whiskerfree</parent>
+			<child>link_whiskeye_whisker6_3</child>
+			<axis>
+				<xyz>-0.981427745 0.1909859392 0.0179986749</xyz>
+				<limit>
+					
+					<lower>-1.57</lower>
+					<upper>1.57</upper>
+				</limit>
+				<dynamics>
+					<friction>0.1</friction>
+					<damping>0.1</damping>
+				</dynamics>
+			</axis>
+		</joint>
+
+		<link name="link_whiskeye_whisker6_3">
+			<inertial>
+				<pose>0.208065 0.09102 0.55441 0 0 0</pose>
+				<mass>0.003 </mass>
+				<inertia>
+					<ixx>0.005236</ixx>
+					<ixy>0</ixy>
+					<ixz>0</ixz>
+					<iyy>0.005236</iyy>
+					<iyz>0</iyz>
+					<izz>0.007854</izz>
+				</inertia>
+			</inertial>
+			<visual name="visual_whiskeye_whisker6_3">
+				<pose>0 0 0 0 0 0</pose>			
+				<geometry>
+					<mesh>
+						<uri>model://whiskeye_gazebo/mesh/hi/whiskeye_whisker6_3.dae</uri>
+					</mesh>
+				</geometry>
+			</visual>
+			<collision name="collision_whiskeye_whisker6_3">
+				<pose>0 0 0 0 0 0</pose>
+				<geometry>
+					<mesh>
+						<uri>model://whiskeye_gazebo/mesh/lo/whiskeye_whisker6_3.dae</uri>
+					</mesh>
+				</geometry>
+				<surface>
+					<friction>
+						<ode>
+							<mu>0.1</mu>
+							<mu2>0.1</mu2>
+						</ode>
+					</friction>
+				</surface>
+			</collision>
+		</link>
+
+		<joint type="revolute" name="joint_whiskeye_whisker6_4">
+			<pose>0.21093 0.105955 0.54119 0 0 0</pose>
+			<parent>link_whiskeye_head_whiskerfree</parent>
+			<child>link_whiskeye_whisker6_4</child>
+			<axis>
+				<xyz>-0.9728111714 0.2254562376 0.0529897144</xyz>
+				<limit>
+					
+					<lower>-1.57</lower>
+					<upper>1.57</upper>
+				</limit>
+				<dynamics>
+					<friction>0.1</friction>
+					<damping>0.1</damping>
+				</dynamics>
+			</axis>
+		</joint>
+
+		<link name="link_whiskeye_whisker6_4">
+			<inertial>
+				<pose>0.21093 0.105955 0.54119 0 0 0</pose>
+				<mass>0.003 </mass>
+				<inertia>
+					<ixx>0.005236</ixx>
+					<ixy>0</ixy>
+					<ixz>0</ixz>
+					<iyy>0.005236</iyy>
+					<iyz>0</iyz>
+					<izz>0.007854</izz>
+				</inertia>
+			</inertial>
+			<visual name="visual_whiskeye_whisker6_4">
+				<pose>0 0 0 0 0 0</pose>			
+				<geometry>
+					<mesh>
+						<uri>model://whiskeye_gazebo/mesh/hi/whiskeye_whisker6_4.dae</uri>
+					</mesh>
+				</geometry>
+			</visual>
+			<collision name="collision_whiskeye_whisker6_4">
+				<pose>0 0 0 0 0 0</pose>
+				<geometry>
+					<mesh>
+						<uri>model://whiskeye_gazebo/mesh/lo/whiskeye_whisker6_4.dae</uri>
+					</mesh>
+				</geometry>
+				<surface>
+					<friction>
+						<ode>
+							<mu>0.1</mu>
+							<mu2>0.1</mu2>
+						</ode>
+					</friction>
+				</surface>
+			</collision>
+		</link>
 
 ### helper for control
 
