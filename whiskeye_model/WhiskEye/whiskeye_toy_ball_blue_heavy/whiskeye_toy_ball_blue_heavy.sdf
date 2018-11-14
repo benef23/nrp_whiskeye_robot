@@ -1,0 +1,79 @@
+<?xml version="1.0"?>
+<sdf version="1.4">
+	<model name="whiskeye_toy_ball">
+		<link name='ball'>
+			<inertial>
+				<!--
+
+					Let's assume the ball has density 0.1 (so it has
+					a reasonable chance of bouncing around).
+
+					p=0.1
+					r=0.1
+					m=p.4(pi)r^3/3
+					Ixyz=2mr^2/3
+
+					m=0.000419
+					Ixyz=0.00000279
+
+					Heavy ball...
+
+					p=0.3
+					r=0.2
+					m=p*4*pi*r^3/3
+					Ixyz=2*m*r^2/3
+
+					m=0.01
+					Ixyz=0.000268
+
+				-->
+				<mass>0.01</mass>
+				<inertia>
+					<ixx>0.000268</ixx>
+					<ixy>0</ixy>
+					<ixz>0</ixz>
+					<iyy>0.000268</iyy>
+					<iyz>0</iyz>
+					<izz>0.000268</izz>
+				</inertia>
+			</inertial>
+			<collision name='collision'>
+				<geometry>
+					<sphere>
+						<radius>0.2</radius>
+					</sphere>
+				</geometry>
+				<surface>
+					<bounce />
+					<friction>
+						<ode />
+					</friction>
+					<contact>
+						<ode />
+					</contact>
+				</surface>
+			</collision>
+			<visual name='visual'>
+				<geometry>
+					<sphere>
+						<radius>0.2</radius>
+					</sphere>
+				</geometry>
+				<material>
+					<script>
+						<!--<uri>file://media/materials/scripts/gazebo.material</uri>-->
+						<name>Gazebo/Blue</name>
+					</script>
+				</material>
+			</visual>
+			<velocity_decay>
+				<linear>0</linear>
+				<angular>0</angular>
+			</velocity_decay>
+			<self_collide>0</self_collide>
+			<kinematic>0</kinematic>
+			<gravity>1</gravity>
+		</link>
+	</model>
+</sdf>
+

@@ -1,0 +1,32 @@
+<?xml version="1.0" ?>
+<sdf version="1.5">
+  <model name='nrppanel'>
+    <pose>0 0 0 0 0 0</pose>
+    <static>1</static>
+    <link name='body'>
+      <collision name="nrppanel">
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://nrp_panel/meshes/nrppanel-coll.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='nrppanel'>
+        <cast_shadows>1</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>model://nrp_panel/meshes/nrppanel.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+      <self_collide>0</self_collide>
+      <kinematic>0</kinematic>
+      <gravity>1</gravity>
+    </link>
+  </model>
+</sdf>

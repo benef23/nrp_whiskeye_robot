@@ -1,0 +1,39 @@
+To port the existing cognitive architecture driving WhiskEye to the NRP before the Summit to demonstrate progress in mammalbot workpackage.
+
+DONE
+
+- Add plugin.
+
+- Add controllers for each DOF.
+
+- Connect existing cognitive architecture to simulator using ROS interface.
+
+- Add world pose control.
+
+- Put ball in arena with robot, so robot chases ball.
+
+- Route cameras to ROS.
+
+TODO (by Wednesday 3rd October)
+
+- Do sensory side of whisking; generate "xy".
+	= We now have contacts in the form (location, normal, depth) in WORLD
+	= The next step is to transform these into WHISKER
+	= We can then process them to determine x/y deflection
+	= That's the output we need
+    = We might need to eliminate forces from whisker collisions, to avoid
+        weird mechanical effects.
+
+- Get him chasing ball / exploring / something.
+    = Remove CqR branding.
+
+- Optionally, Martin may supply individual STLs, in which case I'll add the
+import to .dae and the hanging of multiple models off each link, and using
+different materials for each, to prettify the robot.
+
+- Pass to Martin as a zip file for him to test on a vanilla install.
+
+- Hand off to Benedict, and he will be tasked with getting this into the NRP,
+the main challenge of which will be to invoke and communicate with the
+controller.
+
