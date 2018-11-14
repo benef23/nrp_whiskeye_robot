@@ -3,10 +3,7 @@
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <ns1:brainModel>
     <ns1:file>braitenberg.py</ns1:file>
-    <ns1:populations from="0" population="sensors" to="5" xsi:type="ns1:Range" />
-    <ns1:populations from="5" population="actors" to="8" xsi:type="ns1:Range" />
-    <ns1:populations from="0" population="record" to="8" xsi:type="ns1:Range" />
   </ns1:brainModel>
-  <ns1:bodyModel assetPath="whiskeye_gazebo" customAsset="false">whiskeye_gazebo/whiskeye_robot.sdf</ns1:bodyModel>
-
+  <ns1:bodyModel assetPath="whiskeye_robot" customAsset="false">whiskeye_robot/whiskeye_robot.sdf</ns1:bodyModel>
+  
 </ns1:bibi>
