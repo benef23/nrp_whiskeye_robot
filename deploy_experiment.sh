@@ -18,5 +18,11 @@ mv $HOME/.opt/nrpStorage/1_nrp_sp3_whiskeye_robot/whiskeye_model $HBP/Models/
 # create symlinks for models
 $HBP/Models/create-symlinks.sh
 
-echo "Experiment successfully deployed"
+
+# add support for sdf to bash
+
+echo 'export GAZEBO_STATIC_INCLUDE_DIRS:INTERNAL=/usr/include/gazebo-7;/usr/include/gazebo-7/gazebo;/usr/include/sdformat-4.4;/usr/include/sdformat-4.4/sdf' >> ~/.bashrc
+echo 'export GAZEBO_STATIC_CFLAGS:INTERNAL=-I/usr/include/gazebo-7;-I/usr/include/gazebo-7/gazebo;-I/usr/include/sdformat-4.4;-I/usr/include/sdformat-4.4/sdf' >> ~/.bashrc
+
+echo "Experiment deployed"
 
