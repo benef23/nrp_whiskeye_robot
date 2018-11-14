@@ -22,12 +22,6 @@
 						<uri>model://whiskeye_robot/mesh/hi/whiskeye_body-3_rl-d-30-101-50-01033_complete-1.dae</uri>
 					</mesh>
 				</geometry>
-				<material>
-					<script>
-						<uri>file://media/materials/scripts/gazebo.material</uri>
-						<name>Gazebo/BlackGlow</name>
-					</script>
-				</material>
 			</visual>
 
 			<visual name="whiskeye_body-3_host_pc-1.dae_visual">
@@ -37,12 +31,7 @@
 						<uri>model://whiskeye_robot/mesh/hi/whiskeye_body-3_host_pc-1.dae</uri>
 					</mesh>
 				</geometry>
-				<material>
-					<script>
-						<uri>file://media/materials/scripts/gazebo.material</uri>
-						<name>Gazebo/GreyGlow</name>
-					</script>
-				</material>
+
 			</visual>
 
 			<visual name="whiskeye_body-3_ec-22_large-1.dae_visual">
@@ -52,12 +41,6 @@
 						<uri>model://whiskeye_robot/mesh/hi/whiskeye_body-3_ec-22_large-1.dae</uri>
 					</mesh>
 				</geometry>
-				<material>
-					<script>
-						<uri>file://media/materials/scripts/gazebo.material</uri>
-						<name>Gazebo/BlackGlow</name>
-					</script>
-				</material>
 			</visual>
 
 			<visual name="whiskeye_body-3_wheel-1.dae_visual">
@@ -67,12 +50,6 @@
 						<uri>model://whiskeye_robot/mesh/hi/whiskeye_body-3_wheel-1.dae</uri>
 					</mesh>
 				</geometry>
-				<material>
-					<script>
-						<uri>file://media/materials/scripts/gazebo.material</uri>
-						<name>Gazebo/BlackGlow</name>
-					</script>
-				</material>
 			</visual>
 
 			<visual name="whiskeye_body-3_wheel-3.dae_visual">
@@ -82,12 +59,6 @@
 						<uri>model://whiskeye_robot/mesh/hi/whiskeye_body-3_wheel-3.dae</uri>
 					</mesh>
 				</geometry>
-				<material>
-					<script>
-						<uri>file://media/materials/scripts/gazebo.material</uri>
-						<name>Gazebo/BlackGlow</name>
-					</script>
-				</material>
 			</visual>
 
 			<visual name="whiskeye_body-3_body-1.dae_visual">
@@ -97,12 +68,6 @@
 						<uri>model://whiskeye_robot/mesh/hi/whiskeye_body-3_body-1.dae</uri>
 					</mesh>
 				</geometry>
-				<material>
-					<script>
-						<uri>file://media/materials/scripts/gazebo.material</uri>
-						<name>Gazebo/White</name>
-					</script>
-				</material>
 			</visual>
 
 			<visual name="whiskeye_body-3_myomotordriverpcb-1.dae_visual">
@@ -112,12 +77,6 @@
 						<uri>model://whiskeye_robot/mesh/hi/whiskeye_body-3_myomotordriverpcb-1.dae</uri>
 					</mesh>
 				</geometry>
-				<material>
-					<script>
-						<uri>file://media/materials/scripts/gazebo.material</uri>
-						<name>Gazebo/BlueGlow</name>
-					</script>
-				</material>
 			</visual>
 
 			<visual name="whiskeye_body-3_wheel-2.dae_visual">
@@ -127,12 +86,6 @@
 						<uri>model://whiskeye_robot/mesh/hi/whiskeye_body-3_wheel-2.dae</uri>
 					</mesh>
 				</geometry>
-				<material>
-					<script>
-						<uri>file://media/materials/scripts/gazebo.material</uri>
-						<name>Gazebo/BlackGlow</name>
-					</script>
-				</material>
 			</visual>
 
 
@@ -323,7 +276,7 @@
 				<material>
 					<script>
 						<uri>file://media/materials/scripts/gazebo.material</uri>
-						<name>Gazebo/BlackGlow</name>
+						<name>Gazebo/FlatBlack</name>
 					</script>
 				</material>
 			</visual>
@@ -338,7 +291,7 @@
 				<material>
 					<script>
 						<uri>file://media/materials/scripts/gazebo.material</uri>
-						<name>Gazebo/GreyGlow</name>
+						<name>Gazebo/Grey</name>
 					</script>
 				</material>
 			</visual>
@@ -350,12 +303,7 @@
 						<uri>model://whiskeye_robot/mesh/hi/whiskeye_neck-2_myomotordriverpcb-1.dae</uri>
 					</mesh>
 				</geometry>
-				<material>
-					<script>
-						<uri>file://media/materials/scripts/gazebo.material</uri>
-						<name>Gazebo/BlueGlow</name>
-					</script>
-				</material>
+		
 			</visual>
 
 			<visual name="whiskeye_neck-2_ec-22_large-1.dae_visual">
@@ -368,7 +316,7 @@
 				<material>
 					<script>
 						<uri>file://media/materials/scripts/gazebo.material</uri>
-						<name>Gazebo/BlackGlow</name>
+						<name>Gazebo/FlatBlack</name>
 					</script>
 				</material>
 			</visual>
@@ -486,7 +434,7 @@
 				<material>
 					<script>
 						<uri>file://media/materials/scripts/gazebo.material</uri>
-						<name>Gazebo/BlueGlow</name>
+						<name>Gazebo/Grass</name>
 					</script>
 				</material>
 			</visual>
@@ -501,7 +449,7 @@
 				<material>
 					<script>
 						<uri>file://media/materials/scripts/gazebo.material</uri>
-						<name>Gazebo/BlackGlow</name>
+						<name>Gazebo/FlatBlack</name>
 					</script>
 				</material>
 			</visual>
@@ -516,7 +464,7 @@
 				<material>
 					<script>
 						<uri>file://media/materials/scripts/gazebo.material</uri>
-						<name>Gazebo/BlackGlow</name>
+						<name>Gazebo/FlatBlack</name>
 					</script>
 				</material>
 			</visual>
@@ -531,7 +479,7 @@
 				<material>
 					<script>
 						<uri>file://media/materials/scripts/gazebo.material</uri>
-						<name>Gazebo/GreyGlow</name>
+						<name>Gazebo/Grey</name>
 					</script>
 				</material>
 			</visual>
@@ -649,7 +597,7 @@
 				<material>
 					<script>
 						<uri>file://media/materials/scripts/gazebo.material</uri>
-						<name>Gazebo/BlueGlow</name>
+						<name>Gazebo/Grass</name>
 					</script>
 				</material>
 			</visual>
@@ -664,7 +612,7 @@
 				<material>
 					<script>
 						<uri>file://media/materials/scripts/gazebo.material</uri>
-						<name>Gazebo/BlueGlow</name>
+						<name>Gazebo/Grass</name>
 					</script>
 				</material>
 			</visual>
@@ -679,7 +627,7 @@
 				<material>
 					<script>
 						<uri>file://media/materials/scripts/gazebo.material</uri>
-						<name>Gazebo/RedGlow</name>
+						<name>Gazebo/DarkYellow</name>
 					</script>
 				</material>
 			</visual>
@@ -754,7 +702,7 @@
 				<material>
 					<script>
 						<uri>file://media/materials/scripts/gazebo.material</uri>
-						<name>Gazebo/BlueGlow</name>
+						<name>Gazebo/Grass</name>
 					</script>
 				</material>
 			</visual>
@@ -769,7 +717,7 @@
 				<material>
 					<script>
 						<uri>file://media/materials/scripts/gazebo.material</uri>
-						<name>Gazebo/BlueGlow</name>
+						<name>Gazebo/Grass</name>
 					</script>
 				</material>
 			</visual>
@@ -814,7 +762,7 @@
 				<material>
 					<script>
 						<uri>file://media/materials/scripts/gazebo.material</uri>
-						<name>Gazebo/BlueGlow</name>
+						<name>Gazebo/Grass</name>
 					</script>
 				</material>
 			</visual>
@@ -859,7 +807,7 @@
 				<material>
 					<script>
 						<uri>file://media/materials/scripts/gazebo.material</uri>
-						<name>Gazebo/BlueGlow</name>
+						<name>Gazebo/Grass</name>
 					</script>
 				</material>
 			</visual>
@@ -874,7 +822,7 @@
 				<material>
 					<script>
 						<uri>file://media/materials/scripts/gazebo.material</uri>
-						<name>Gazebo/BlueGlow</name>
+						<name>Gazebo/Grass</name>
 					</script>
 				</material>
 			</visual>
@@ -889,7 +837,7 @@
 				<material>
 					<script>
 						<uri>file://media/materials/scripts/gazebo.material</uri>
-						<name>Gazebo/BlueGlow</name>
+						<name>Gazebo/Grass</name>
 					</script>
 				</material>
 			</visual>
@@ -1316,7 +1264,7 @@
 				<material>
 					<script>
 						<uri>file://media/materials/scripts/gazebo.material</uri>
-						<name>Gazebo/RedGlow</name>
+						<name>Gazebo/Orange</name>
 					</script>
 				</material>
 			</visual>
@@ -1392,7 +1340,7 @@
 				<material>
 					<script>
 						<uri>file://media/materials/scripts/gazebo.material</uri>
-						<name>Gazebo/RedGlow</name>
+						<name>Gazebo/Orange</name>
 					</script>
 				</material>
 			</visual>
@@ -1468,7 +1416,7 @@
 				<material>
 					<script>
 						<uri>file://media/materials/scripts/gazebo.material</uri>
-						<name>Gazebo/RedGlow</name>
+						<name>Gazebo/Orange</name>
 					</script>
 				</material>
 			</visual>
@@ -1544,7 +1492,7 @@
 				<material>
 					<script>
 						<uri>file://media/materials/scripts/gazebo.material</uri>
-						<name>Gazebo/RedGlow</name>
+						<name>Gazebo/Orange</name>
 					</script>
 				</material>
 			</visual>
@@ -1620,7 +1568,7 @@
 				<material>
 					<script>
 						<uri>file://media/materials/scripts/gazebo.material</uri>
-						<name>Gazebo/RedGlow</name>
+						<name>Gazebo/Orange</name>
 					</script>
 				</material>
 			</visual>
@@ -1696,7 +1644,7 @@
 				<material>
 					<script>
 						<uri>file://media/materials/scripts/gazebo.material</uri>
-						<name>Gazebo/RedGlow</name>
+						<name>Gazebo/Orange</name>
 					</script>
 				</material>
 			</visual>
@@ -1772,7 +1720,7 @@
 				<material>
 					<script>
 						<uri>file://media/materials/scripts/gazebo.material</uri>
-						<name>Gazebo/RedGlow</name>
+						<name>Gazebo/Orange</name>
 					</script>
 				</material>
 			</visual>
@@ -1848,7 +1796,7 @@
 				<material>
 					<script>
 						<uri>file://media/materials/scripts/gazebo.material</uri>
-						<name>Gazebo/RedGlow</name>
+						<name>Gazebo/Orange</name>
 					</script>
 				</material>
 			</visual>
@@ -1924,7 +1872,7 @@
 				<material>
 					<script>
 						<uri>file://media/materials/scripts/gazebo.material</uri>
-						<name>Gazebo/RedGlow</name>
+						<name>Gazebo/Orange</name>
 					</script>
 				</material>
 			</visual>
@@ -2000,7 +1948,7 @@
 				<material>
 					<script>
 						<uri>file://media/materials/scripts/gazebo.material</uri>
-						<name>Gazebo/RedGlow</name>
+						<name>Gazebo/Orange</name>
 					</script>
 				</material>
 			</visual>
@@ -2076,7 +2024,7 @@
 				<material>
 					<script>
 						<uri>file://media/materials/scripts/gazebo.material</uri>
-						<name>Gazebo/RedGlow</name>
+						<name>Gazebo/Orange</name>
 					</script>
 				</material>
 			</visual>
@@ -2152,7 +2100,7 @@
 				<material>
 					<script>
 						<uri>file://media/materials/scripts/gazebo.material</uri>
-						<name>Gazebo/RedGlow</name>
+						<name>Gazebo/Orange</name>
 					</script>
 				</material>
 			</visual>
@@ -2228,7 +2176,7 @@
 				<material>
 					<script>
 						<uri>file://media/materials/scripts/gazebo.material</uri>
-						<name>Gazebo/RedGlow</name>
+						<name>Gazebo/Orange</name>
 					</script>
 				</material>
 			</visual>
@@ -2304,7 +2252,7 @@
 				<material>
 					<script>
 						<uri>file://media/materials/scripts/gazebo.material</uri>
-						<name>Gazebo/RedGlow</name>
+						<name>Gazebo/Orange</name>
 					</script>
 				</material>
 			</visual>
@@ -2380,7 +2328,7 @@
 				<material>
 					<script>
 						<uri>file://media/materials/scripts/gazebo.material</uri>
-						<name>Gazebo/RedGlow</name>
+						<name>Gazebo/Orange</name>
 					</script>
 				</material>
 			</visual>
@@ -2456,7 +2404,7 @@
 				<material>
 					<script>
 						<uri>file://media/materials/scripts/gazebo.material</uri>
-						<name>Gazebo/RedGlow</name>
+						<name>Gazebo/Orange</name>
 					</script>
 				</material>
 			</visual>
@@ -2532,7 +2480,7 @@
 				<material>
 					<script>
 						<uri>file://media/materials/scripts/gazebo.material</uri>
-						<name>Gazebo/RedGlow</name>
+						<name>Gazebo/Orange</name>
 					</script>
 				</material>
 			</visual>
@@ -2608,7 +2556,7 @@
 				<material>
 					<script>
 						<uri>file://media/materials/scripts/gazebo.material</uri>
-						<name>Gazebo/RedGlow</name>
+						<name>Gazebo/Orange</name>
 					</script>
 				</material>
 			</visual>
@@ -2684,7 +2632,7 @@
 				<material>
 					<script>
 						<uri>file://media/materials/scripts/gazebo.material</uri>
-						<name>Gazebo/RedGlow</name>
+						<name>Gazebo/Orange</name>
 					</script>
 				</material>
 			</visual>
@@ -2760,7 +2708,7 @@
 				<material>
 					<script>
 						<uri>file://media/materials/scripts/gazebo.material</uri>
-						<name>Gazebo/RedGlow</name>
+						<name>Gazebo/Orange</name>
 					</script>
 				</material>
 			</visual>
@@ -2836,7 +2784,7 @@
 				<material>
 					<script>
 						<uri>file://media/materials/scripts/gazebo.material</uri>
-						<name>Gazebo/RedGlow</name>
+						<name>Gazebo/Orange</name>
 					</script>
 				</material>
 			</visual>
@@ -2912,7 +2860,7 @@
 				<material>
 					<script>
 						<uri>file://media/materials/scripts/gazebo.material</uri>
-						<name>Gazebo/RedGlow</name>
+						<name>Gazebo/Orange</name>
 					</script>
 				</material>
 			</visual>
@@ -2988,7 +2936,7 @@
 				<material>
 					<script>
 						<uri>file://media/materials/scripts/gazebo.material</uri>
-						<name>Gazebo/RedGlow</name>
+						<name>Gazebo/Orange</name>
 					</script>
 				</material>
 			</visual>
@@ -3064,7 +3012,7 @@
 				<material>
 					<script>
 						<uri>file://media/materials/scripts/gazebo.material</uri>
-						<name>Gazebo/RedGlow</name>
+						<name>Gazebo/Orange</name>
 					</script>
 				</material>
 			</visual>
